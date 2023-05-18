@@ -1,9 +1,16 @@
 function findShortestStringRecursive(arr) {
-  // type your code here
-}
+  if(arr.length === 1){
+    return arr[0]
+  }
+  const shortie = findShortestStringRecursive(arr.slice(1))
+  return arr[0].length <= shortie.length ? arr[0] : shortie
+
+ }
 
 if (require.main === module) {
-  // add your own tests in here
+  
+  console.log(findShortestStringRecursive(['happy','hoppy', 'phil']))
+
   console.log("Expecting: 'a'");
   console.log("=>", findShortestStringRecursive(['aaa', 'a', 'bb', 'ccc']));
 
